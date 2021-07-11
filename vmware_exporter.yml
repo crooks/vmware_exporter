@@ -1,0 +1,6 @@
+# vmware_exporter.yml
+
+api:
+  url: https://localhost
+  userid: userid
+  password: password
