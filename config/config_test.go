@@ -16,6 +16,7 @@ func TestConfig(t *testing.T) {
 	expected_api_url := "https://localhost"
 	expected_api_userid := "userid"
 	expected_api_password := "password"
+	expected_api_insecure := true
 	cfg, err := ParseConfig("vmware_exporter.yml")
 	if err != nil {
 		t.Fatalf("newConfig returned: %v", err)
@@ -28,5 +29,8 @@ func TestConfig(t *testing.T) {
 	}
 	if cfg.API.Password != expected_api_password {
 		t.Fatalf("Expected cfg.API.Password to contain \"%s\" but got \"%s\".", expected_api_password, cfg.API.Password)
+	}
+	if cfg.API.Insecure != expected_api_insecure {
+		t.Fatalf("Expected cfg.API.Insecure to be \"%t\" but got \"%t\".", expected_api_insecure, cfg.API.Insecure)
 	}
 }

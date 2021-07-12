@@ -11,6 +11,7 @@ type Config struct {
 		URL string `yaml:"url"`
 		UserID string `yaml:"userid"`
 		Password string `yaml:"password"`
+		Insecure bool `yaml:"insecure"`
 	}
 }
 
@@ -29,9 +30,6 @@ func ParseFlags() *Flags {
 	flag.Parse()
 	return f
 }
-
-// Create a global variable to hold the configuration
-var cfg *Config
 
 func ParseConfig(filename string) (*Config, error) {
 	file, err := os.Open(filename)

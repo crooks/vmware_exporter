@@ -4,3 +4,4 @@ api:
   url: https://localhost
   userid: userid
   password: password
+  insecure: true
